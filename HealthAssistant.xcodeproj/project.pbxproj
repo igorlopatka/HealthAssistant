@@ -11,7 +11,6 @@
 		456A839D2AA6112A00B9C94E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456A839C2AA6112A00B9C94E /* ContentView.swift */; };
 		456A839F2AA6112B00B9C94E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 456A839E2AA6112B00B9C94E /* Assets.xcassets */; };
 		456A83A22AA6112B00B9C94E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 456A83A12AA6112B00B9C94E /* Preview Assets.xcassets */; };
-		456A83A42AA6112B00B9C94E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456A83A32AA6112B00B9C94E /* Persistence.swift */; };
 		456A83A72AA6112B00B9C94E /* HealthAssistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 456A83A52AA6112B00B9C94E /* HealthAssistant.xcdatamodeld */; };
 		456A83B22AA6112B00B9C94E /* HealthAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456A83B12AA6112B00B9C94E /* HealthAssistantTests.swift */; };
 		456A83BC2AA6112B00B9C94E /* HealthAssistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456A83BB2AA6112B00B9C94E /* HealthAssistantUITests.swift */; };
@@ -41,7 +40,6 @@
 		456A839C2AA6112A00B9C94E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		456A839E2AA6112B00B9C94E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		456A83A12AA6112B00B9C94E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		456A83A32AA6112B00B9C94E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		456A83A62AA6112B00B9C94E /* HealthAssistant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HealthAssistant.xcdatamodel; sourceTree = "<group>"; };
 		456A83A82AA6112B00B9C94E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		456A83AD2AA6112B00B9C94E /* HealthAssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthAssistantTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +47,7 @@
 		456A83B72AA6112B00B9C94E /* HealthAssistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthAssistantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		456A83BB2AA6112B00B9C94E /* HealthAssistantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAssistantUITests.swift; sourceTree = "<group>"; };
 		456A83BD2AA6112B00B9C94E /* HealthAssistantUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAssistantUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		45FB00F02AA739B7003F50FD /* HealthAssistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthAssistant.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +98,10 @@
 		456A83992AA6112A00B9C94E /* HealthAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				45FB00F02AA739B7003F50FD /* HealthAssistant.entitlements */,
 				456A839A2AA6112A00B9C94E /* HealthAssistantApp.swift */,
 				456A839C2AA6112A00B9C94E /* ContentView.swift */,
 				456A839E2AA6112B00B9C94E /* Assets.xcassets */,
-				456A83A32AA6112B00B9C94E /* Persistence.swift */,
 				456A83A82AA6112B00B9C94E /* Info.plist */,
 				456A83A52AA6112B00B9C94E /* HealthAssistant.xcdatamodeld */,
 				456A83A02AA6112B00B9C94E /* Preview Content */,
@@ -266,7 +265,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				456A83A72AA6112B00B9C94E /* HealthAssistant.xcdatamodeld in Sources */,
-				456A83A42AA6112B00B9C94E /* Persistence.swift in Sources */,
 				456A839D2AA6112A00B9C94E /* ContentView.swift in Sources */,
 				456A839B2AA6112A00B9C94E /* HealthAssistantApp.swift in Sources */,
 			);
@@ -424,12 +422,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HealthAssistant/HealthAssistant.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthAssistant/Preview Content\"";
 				DEVELOPMENT_TEAM = 6A7T62L69W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HealthAssistant/Info.plist;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -453,12 +456,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HealthAssistant/HealthAssistant.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthAssistant/Preview Content\"";
 				DEVELOPMENT_TEAM = 6A7T62L69W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HealthAssistant/Info.plist;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
